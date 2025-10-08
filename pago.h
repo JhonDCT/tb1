@@ -12,4 +12,5 @@ private:
 
 public:
     bool confirmado();
+    double getMonto() { return monto; };
 };

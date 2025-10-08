@@ -1,7 +1,12 @@
+#pragma once
+
 template <typename T>
 class Nodo
 {
 private:
     T valor;
-    Nodo<T> siguiente;
+    unique_ptr<Nodo<T>> siguiente;
+
+public:
+    Nodo(T v) : valor(v), siguiente(nullptr) {}
 };

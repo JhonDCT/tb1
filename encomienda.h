@@ -8,6 +8,8 @@
 #include "comprobante.h"
 #include "vehiculo.h"
 #include "seguimiento.h"
+#include "repartidor.h"
+#include "ruta.h"
 
 class Encomienda
 {
@@ -23,5 +25,9 @@ private:
     Pago pago;
     Comprobante comprobante;
     Vehiculo vehiculo;
-    
+    Repartidor repartidor;
+    Ruta ruta;
+
+public:
+    double getPago() { return pago.getMonto(); };
 };

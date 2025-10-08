@@ -1,5 +1,7 @@
+#pragma once
+
 #include <string>
-#include <sucursal.h>
+#include "sucursal.h"
 
 using namespace std;
 

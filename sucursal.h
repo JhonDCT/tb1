@@ -1,3 +1,5 @@
+#pragma once
+
 #include "direccion.h"
 
 class Sucursal
