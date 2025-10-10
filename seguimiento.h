@@ -8,9 +8,14 @@ class Seguimiento
 {
 private:
     string codigoTracking;
-    Lista<Evento> eventos;
+    // Lista<Evento> eventos;
 
 public:
+    Seguimiento() {
+    }
+
+    void setCodigoTracking(string c) { codigoTracking = c; }
+
     void agregarEvento(Evento evento);
     Evento ultimoEvento();
 };

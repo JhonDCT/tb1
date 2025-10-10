@@ -10,5 +10,11 @@ private:
     int dias_promedio;
 
 public:
+    Servicio(){}
+
+    void setCodigo(string c) { codigo = c; }
+    void setNombre(string n) { nombre = n; }
+    void setDiasPromedio(int d) { dias_promedio = d; }
+
     bool esExpress();
 };

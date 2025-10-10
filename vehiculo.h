@@ -10,5 +10,11 @@ private:
     double capacidad;
 
 public:
+    Vehiculo() {}
+
+    void setPlaca(string p) { placa = p; }
+    void setTipo(string t) { tipo = t; }
+    void setCapacidad(double c) { capacidad = c; }
+
     bool disponible();
 };

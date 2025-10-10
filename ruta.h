@@ -14,5 +14,12 @@ private:
     double km;
 
 public:
+    Ruta() {}
+
+    void setId(string i) { id = i; }
+    void setOrigen(Sucursal o) { origen = o; }
+    void setDestino(Sucursal d) { destino = d; }
+    void setKm(double k) { km = k; }
+
     double estimadoHoras();
 };

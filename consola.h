@@ -1,7 +1,10 @@
+#pragma once
+
 #include <iostream>
+
 #include "gestor_envios.h"
 #include "ordenamiento.h"
-#include "quicksort.h"
+#include "burbuja.h"
 
 using namespace std;
 

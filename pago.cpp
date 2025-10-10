@@ -1,4 +1,4 @@
-#include <pago.h>
+#include "pago.h"
 
 bool Pago::confirmado()
 {

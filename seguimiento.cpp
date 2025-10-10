@@ -1,4 +1,4 @@
-#include <seguimiento.h>
+#include "seguimiento.h"
 
 void Seguimiento::agregarEvento(Evento evento)
 {

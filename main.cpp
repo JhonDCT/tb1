@@ -7,12 +7,13 @@ int main()
 {
     cout << "Hola" << endl;
 
-    Consola consola = Consola();
+    Consola consola;
+    // Consola consola();
 
     while (true)
     {
         consola.mostrarMenu();
     }
 
-    return 1;
+    return 0;
 }

@@ -11,5 +11,12 @@ private:
     string tipo;
 
 public:
+    Comprobante() {}
+
+    void setSerie(string s) { serie = s; }
+    void setNumero(string n) { numero = n; }
+    void setTotal(double t) { total = t; }
+    void setTipo(string ti) { tipo = ti; }
+
     void imprimir();
 };

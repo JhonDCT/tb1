@@ -5,7 +5,7 @@ template <typename T>
 class Lista
 {
 private:
-    Nodo<T> cabeza;
+    Nodo<T> *cabeza;
     int tamano;
 
 public:
@@ -14,25 +14,50 @@ public:
 
     void limpiarNodos()
     {
-        Nodo<T> actual = cabeza;
-        while (actual)
-        {
-            Nodo<T> temporal = actual->siguiente();
+        // Nodo<T> actual = cabeza;
+        // while (actual->getSiguiente())
+        // {
+        //     Nodo<T> temporal = actual->getSiguiente();
 
-            actual = temporal;
-        }
+        //     actual = temporal;
+        // }
 
-        cabeza = nullptr;
-        tamano = 0;
+        // cabeza = nullptr;
+        // tamano = 0;
     }
 
     void insertarInicio(T item)
     {
-        Nodo<T> nodo = new Nodo<T>(item);
-        nodo->siguiente = cabeza;
-        cabeza = nodo ;
-        tamano++;
+        Nodo<T>* nuevo = new Nodo<T>(item, cabeza);
+        if (nuevo != nullptr)
+        {
+            cabeza = nuevo;
+            tamano++;
+        }
+
+        // Nodo<T> *actual = cabeza;
+        // while (actual->getSiguiente())
+        // {
+        //     actual = actual->getSiguiente();
+        // }
+
+        // actual->setSiguiente(nodo);
     }
+
+    void convertirAArreglo(T *arreglo = nullptr)
+    {
+        Nodo<T> *actual = cabeza;
+        int indice = 0;
+
+        while (actual)
+        {
+            arreglo[indice] = actual->getValor();
+            actual = actual->getSiguiente();
+            indice++;
+        }
+    }
+
+    int getTamano() { return tamano; }
 
     void insertarFin(T item) {}
 

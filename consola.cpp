@@ -1,14 +1,24 @@
 #include "consola.h"
 
+int compararPorMonto(Encomienda &a, Encomienda &b)
+{
+    if (a.getPago() < b.getPago())
+        return -1;
+    if (a.getPago() > b.getPago())
+        return 1;
+
+    return 0;
+}
+
 void Consola::mostrarMenu()
 {
     cout << "1) Listar encomiendas\n";
     cout << "0) Salir\n";
 
-    int op;
-    cin >> op;
+    int opcion;
+    cin >> opcion;
 
-    switch (op)
+    switch (opcion)
     {
     case 0:
         break;
@@ -24,17 +34,7 @@ void Consola::mostrarMenu()
 
 void Consola::listarEncomiendas()
 {
-    Ordenamiento<Encomienda> qs = QuickSort<Encomienda>();
+    Burbuja<Encomienda> qs;
 
-    // gestorEnvios.listarOrdenado(compararPorMonto, qs);
-}
-
-int compararPorMonto(Encomienda a, Encomienda b)
-{
-    if (a.getPago() < b.getPago())
-        return -1;
-    if (a.getPago() > b.getPago())
-        return 1;
-
-    return 0;
+    gestorEnvios.listarOrdenado(compararPorMonto, qs);
 }
