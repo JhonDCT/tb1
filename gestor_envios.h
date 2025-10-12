@@ -1,35 +1,27 @@
+#pragma once
+
+#include <functional>
+
 #include "encomienda.h"
 #include "ordenamiento.h"
 #include "gestor_encomiendas.h"
+#include "gestor_clientes.h"
+#include "gestor_sucursales.h"
+#include "lista_doble.h"
 
 using namespace std;
 
 class GestorEnvios
 {
 private:
-    GestorEncomiendas gestorEncomiendas;
+	GestorEncomiendas gestorEncomiendas;
+	GestorClientes gestorCliente;
+	GestorSucursales gestorSucursal;
 
 public:
-    // template <typename Comparador>
-    // Lista<Encomienda> listarOrdenado(Comparador cmp, Ordenamiento<Encomienda> est);
-
-    // Lista<Encomienda> listarOrdenado(const function<int(Encomienda &, Encomienda &)> cmp, Ordenamiento<Encomienda> est)
-    void listarOrdenado(function<int(Encomienda &, Encomienda &)> cmp, Ordenamiento<Encomienda> &est)
-    {
-        Lista<Encomienda> encomiendas = gestorEncomiendas.listar();
-        Encomienda *arr = {};
-        encomiendas.convertirAArreglo(arr);
-
-        for (size_t i = 0; i < encomiendas.getTamano(); i++)
-        {
-            /* code */
-            cout << "Encomienda " << i << " Monto: " << arr[i].getPago() << endl;
-        }
-
-        // est.ordenar(encomiendas, cmp);
-        // Lista<Encomienda> copia = envios;
-
-        // est.ordenar([], cmp);
-    }
+	void listarOrdenado(function<int(Encomienda, Encomienda)> cmp, Ordenamiento<Encomienda>& est);
+	void buscarEncomiendaPorCodigo(string codigo);
+	void crearEncomienda(string remitenteDni, string destinatarioDni, string sucursalDestino, string servicio, double montoPago);
+	
+	void imprimir(Encomienda encomiendas[], int q);
 };
-// Lista<Encomienda> listarOrdenado(const std::function<int(const Encomienda&, const Encomienda&)>& cmp, Ordenamiento<Encomienda> est);

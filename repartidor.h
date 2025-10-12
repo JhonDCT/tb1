@@ -16,5 +16,7 @@ public:
     void setNombre(string n) { nombre = n; }
     void setLicencia(string l) { licencia = l; }
 
-    bool asignable();
+	string getNombre() { return nombre; }
+
+    /*bool asignable();*/
 };

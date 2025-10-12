@@ -1,4 +1,5 @@
-#include <iostream>
+#pragma once
+
 #include "ordenamiento.h"
 
 using namespace std;
@@ -6,38 +7,24 @@ using namespace std;
 template <typename T>
 class Burbuja : public Ordenamiento<T>
 {
-    // void ordenar(Lista<T> datos, cmp : (T, T)->int) {
-    void ordenar(Lista<T> datos, function<int(T &, T &)> cmp) override
-    {
-        T a[] = {};
-        datos.convertirAArreglo(a);
+	void ordenar(T datos[], int q, function<int(T, T)> cmp) override
+	{
+		bool intercambio = false;
 
-        bool ordenado;
+		for (int i = 0; i < q - 1; i++)
+		{
+			intercambio = false;
 
-        for (int i = 0; i < datos.getTamano(); i++)
-        {
-            ordenado = true;
+			for (int j = 0; j < q - i - 1; j++)
+			{
+				if (cmp(datos[j], datos[j + 1]) > 0) {
+					swap(datos[j], datos[j + 1]);
+					intercambio = true;
+				}
+			}
 
-            for (int j = 0; j < datos.getTamano() - (i + 1); j++)
-            {
-                // T aux = datos.getPosicion(j);
-                // T aux = a[j];
-                // a[j] = a[j + 1];
-                // a[j + 1] = aux;
-                // int index = cmp(a[j], a[j + 1]);
-
-                // ordenado = index <= 0 ? true : false;
-                // if (a[j] > a[j + 1])
-                // {
-                //     int aux = a[j];
-                //     a[j] = a[j + 1];
-                //     a[j + 1] = aux;
-                //     ordenado = false;
-                // }
-            }
-
-            if (ordenado)
-                break;
-        }
-    }
+			if (!intercambio)
+				break;
+		}
+	}
 };

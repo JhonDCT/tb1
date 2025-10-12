@@ -14,7 +14,10 @@ private:
     double km;
 
 public:
-    Ruta() {}
+    Ruta() {
+        id = "";
+		km = 0.0;
+    }
 
     void setId(string i) { id = i; }
     void setOrigen(Sucursal o) { origen = o; }

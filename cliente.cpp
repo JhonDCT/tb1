@@ -2,5 +2,5 @@
 
 bool Cliente::validar()
 {
-    return !id.empty() && !dniRuc.empty() && !nombre.empty();
+    return !id.empty() && !dni.empty() && !nombre.empty();
 }

@@ -18,5 +18,8 @@ public:
     void setDireccion(Direccion d) { direccion = d; }
     void setTelefono(string t) { telefono = t; }
 
+    string getNombre() { return nombre; }
+    string getId() { return id; }
+
     int capacidad();
 };

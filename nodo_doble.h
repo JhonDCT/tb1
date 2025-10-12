@@ -1,21 +1,18 @@
 #pragma once
 
 template <typename T>
-class Nodo
+class NodoDoble
 {
 public:
 	T valor;
-	Nodo<T>* siguiente;
+	NodoDoble<T>* siguiente;
+	NodoDoble<T>* anterior;
 
 public:
-	Nodo()
-	{
-		siguiente = nullptr;
-	}
-
-	Nodo(T val)
+	NodoDoble(T val)
 	{
 		valor = val;
 		siguiente = nullptr;
+		anterior = nullptr;
 	}
 };

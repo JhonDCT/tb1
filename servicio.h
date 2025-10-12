@@ -10,7 +10,11 @@ private:
     int dias_promedio;
 
 public:
-    Servicio(){}
+    Servicio(){
+        codigo = "";
+        nombre = "";
+		dias_promedio = 0;
+    }
 
     void setCodigo(string c) { codigo = c; }
     void setNombre(string n) { nombre = n; }

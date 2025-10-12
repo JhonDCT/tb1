@@ -5,11 +5,15 @@ template <typename T>
 class Lista
 {
 private:
-    Nodo<T> *cabeza;
+    Nodo<T>* cabeza;
     int tamano;
 
 public:
-    Lista() : cabeza(nullptr), tamano(0) {}
+    Lista() {
+        cabeza = nullptr;
+		tamano = 0;
+    }
+
     ~Lista() { limpiarNodos(); }
 
     void limpiarNodos()
@@ -28,20 +32,12 @@ public:
 
     void insertarInicio(T item)
     {
-        Nodo<T>* nuevo = new Nodo<T>(item, cabeza);
+        Nodo<T>* nuevo = new Nodo<T>(item);
         if (nuevo != nullptr)
         {
             cabeza = nuevo;
             tamano++;
         }
-
-        // Nodo<T> *actual = cabeza;
-        // while (actual->getSiguiente())
-        // {
-        //     actual = actual->getSiguiente();
-        // }
-
-        // actual->setSiguiente(nodo);
     }
 
     void convertirAArreglo(T *arreglo = nullptr)
@@ -51,8 +47,8 @@ public:
 
         while (actual)
         {
-            arreglo[indice] = actual->getValor();
-            actual = actual->getSiguiente();
+            arreglo[indice] = actual->valor;
+            actual = actual->siguiente;
             indice++;
         }
     }
