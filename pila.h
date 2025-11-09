@@ -1,20 +1,21 @@
 #pragma once
 #include "nodo.h"
 
+// TODO: Implementar pila
 template <typename T>
-class Lista
+class Pila
 {
 private:
     Nodo<T>* cabeza;
     int tamano;
 
 public:
-    Lista() {
+    Pila() {
         cabeza = nullptr;
-		tamano = 0;
+        tamano = 0;
     }
 
-    ~Lista() { limpiarNodos(); }
+    ~Pila() { limpiarNodos(); }
 
     void limpiarNodos()
     {
@@ -42,9 +43,9 @@ public:
 
 
 
-    void convertirAArreglo(T *arreglo = nullptr)
+    void convertirAArreglo(T* arreglo = nullptr)
     {
-        Nodo<T> *actual = cabeza;
+        Nodo<T>* actual = cabeza;
         int indice = 0;
 
         while (actual)

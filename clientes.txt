@@ -1,0 +1,11 @@
+cliente3;23456789;Luis Gomez;923456789;luis.gomez@example.com
+cliente10;90123456;Sofia Herrera;990123456;sofia.herrera@example.com
+cliente5;45678901;Carlos Ruiz;945678901;carlos.ruiz@example.com
+cliente6;56789012;Elena Diaz;956789012;elena.diaz@example.com
+cliente2;12345678;Maria Perez;912345678;maria.perez@example.com
+cliente7;67890123;Pedro Sanchez;967890123;pedro.sanchez@example.com
+cliente1;01010101;Jhon Catacora;987654321;jhon.catacora@example.com
+cliente9;89012345;Miguel Castro;989012345;miguel.castro@example.com
+cliente8;78901234;Lucia Vargas;978901234;lucia.vargas@example.com
+cliente11;1223344;Diego Ramos;911223344;diego.ramos@example.com
+cliente4;34567890;Ana Torres;934567890;ana.torres@example.com

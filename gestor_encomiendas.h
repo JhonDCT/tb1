@@ -13,15 +13,19 @@ using namespace std;
 class GestorEncomiendas
 {
 private:
+	ListaDoble<Encomienda> encomiendas;
 	string ruta;
 
 public:
 	GestorEncomiendas() {
 		ruta = "encomiendas.txt";
+		encomiendas = listar();
 	}
 
-	ListaDoble<Encomienda> listar();
-	Encomienda buscarPorCodigo(string codigo);
+	ListaDoble<Encomienda> getEncomiendas() {
+		return encomiendas;
+	}
+
 	string crear(
 		Cliente remitente,
 		Cliente destinatario,
@@ -33,4 +37,7 @@ public:
 		Repartidor repartidor,
 		Ruta ruta
 	);
+	void eliminar(string codigo);
+	ListaDoble<Encomienda> listar();
+	Encomienda buscarPorCodigo(string codigo);
 };

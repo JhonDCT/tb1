@@ -2,5 +2,16 @@
 
 bool Cliente::validar()
 {
-    return !id.empty() && !dni.empty() && !nombre.empty();
+    //return !id.empty() && !dni.empty() && !nombre.empty();
+
+    return false;
+}
+
+void Cliente::imprimir()
+{
+    cout << "ID: " << id << endl;
+    cout << "DNI: " << dni << endl;
+    cout << "Nombre: " << nombre << endl;
+    cout << "Telefono: " << telefono << endl;
+    cout << "Email: " << email << endl;
 }

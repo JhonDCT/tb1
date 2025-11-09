@@ -1,5 +1,6 @@
 #pragma once 
 
+#include <iostream>
 #include <string>
 
 using namespace std;
@@ -17,7 +18,7 @@ public:
     Cliente() {}
 
     void setId(string i) { id = i; }
-    void setDniRuc(string dni) { dni = dni; }
+    void setDni(string v) { dni = v; }
     void setNombre(string nom) { nombre = nom; }
     void setTelefono(string tel) { telefono = tel; }
     void setEmail(string ema) { email = ema; }
@@ -29,4 +30,5 @@ public:
     string getEmail() { return id; }
 
     bool validar();
+    void imprimir();
 };

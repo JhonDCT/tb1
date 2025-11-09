@@ -16,7 +16,7 @@ class Burbuja : public Ordenamiento<T>
 			intercambio = false;
 
 			for (int j = 0; j < q - i - 1; j++)
-			{
+			{				
 				if (cmp(datos[j], datos[j + 1]) > 0) {
 					swap(datos[j], datos[j + 1]);
 					intercambio = true;

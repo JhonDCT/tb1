@@ -1,4 +1,5 @@
 #pragma once
+
 #include <functional>
 
 #include "nodo_doble.h"
@@ -31,7 +32,8 @@ public:
 		{
 			if (cabeza == nullptr)
 			{
-				cabeza = cola = nuevo;
+				cabeza = nuevo;
+				cola = nuevo;
 			}
 			else
 			{

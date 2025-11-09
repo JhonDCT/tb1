@@ -2,7 +2,7 @@
 
 ListaDoble<Encomienda> GestorEncomiendas::listar()
 {
-	ListaDoble<Encomienda> encomiendas;
+	/*ListaDoble<Encomienda> encomiendas;*/
 	string ruta = "encomiendas.txt";
 
 	ifstream fichero;
@@ -29,14 +29,14 @@ ListaDoble<Encomienda> GestorEncomiendas::listar()
 
 		Cliente remitente = Cliente();
 		remitente.setId(campos[1]);
-		remitente.setDniRuc(campos[2]);
+		remitente.setDni(campos[2]);
 		remitente.setNombre(campos[3]);
 		remitente.setTelefono(campos[4]);
 		remitente.setEmail(campos[5]);
 
 		Cliente destinatario = Cliente();
 		destinatario.setId(campos[6]);
-		destinatario.setDniRuc(campos[7]);
+		destinatario.setDni(campos[7]);
 		destinatario.setNombre(campos[8]);
 		destinatario.setTelefono(campos[9]);
 		destinatario.setEmail(campos[10]);
@@ -130,7 +130,7 @@ ListaDoble<Encomienda> GestorEncomiendas::listar()
 }
 
 Encomienda GestorEncomiendas::buscarPorCodigo(string codigo) {
-	ListaDoble<Encomienda> encomiendas = listar();
+	//ListaDoble<Encomienda> encomiendas = listar();
 
 	auto comparadorPorCodigo = [codigo](Encomienda a) {
 
@@ -153,6 +153,8 @@ string GestorEncomiendas::crear(
 	Repartidor repartidor,
 	Ruta ruta
 ) {
+	// TODO: crear evento
+	// TODO: listar eventos
 	// TODO: generar numero grande aleatorio
 	Seguimiento seguimiento = Seguimiento();
 	seguimiento.setCodigoTracking("123");

@@ -1,8 +1,8 @@
 #include "gestor_clientes.h"
 
-ListaDoble<Cliente> GestorClientes::listar()
+ArbolBinario<Cliente> GestorClientes::listar()
 {
-	ListaDoble<Cliente> clientes;
+	/*ArbolBinario<Cliente> clientes;*/
 	string ruta = "clientes.txt";
 
 	ifstream fichero;
@@ -12,6 +12,17 @@ ListaDoble<Cliente> GestorClientes::listar()
 	{
 		cout << "No se puede abrir el archivo" << ruta << endl;
 	}
+
+	auto compararPorDni = [](Cliente a, Cliente b) -> int
+		{
+			if (stoi(a.getDni()) > stoi(b.getDni()))
+				return 1;
+
+			if (stoi(a.getDni()) < stoi(b.getDni()))
+				return -1;
+
+			return 0;
+		};
 
 	string linea;
 	while (getline(fichero, linea))
@@ -29,13 +40,12 @@ ListaDoble<Cliente> GestorClientes::listar()
 
 		Cliente cliente = Cliente();
 		cliente.setId(campos[0]);
-		cliente.setDniRuc(campos[1]);
+		cliente.setDni(campos[1]);
 		cliente.setNombre(campos[2]);
 		cliente.setTelefono(campos[3]);
-		cliente.setEmail(campos[4]);
+		cliente.setEmail(campos[4]);		
 
-
-		clientes.insertarInicio(cliente);
+		clientes.insertarNodo(cliente, compararPorDni);
 	}
 
 	fichero.close();
@@ -45,13 +55,22 @@ ListaDoble<Cliente> GestorClientes::listar()
 
 Cliente GestorClientes::buscarPorDni(string dni)
 {
-	ListaDoble<Cliente> clientes = listar();
+	//clientes = listar();
+	//ArbolBinario<Cliente> clientes = listar();
 
-	auto comparadorPorDni = [dni](Cliente c) {
-		if (c.getDni() == dni) return true;
+	auto buscadorPorDni = [dni](Cliente c) {
+		if (stoi(c.getDni()) == stoi(dni))
+		{
+			return 1;
+		}
+		else if (stoi(dni) < stoi(c.getDni())) {
+			return -1;
+		}
 
-		return false;
+		return 0;
 		};
 
-	return clientes.buscar(comparadorPorDni);
+	auto nodo = clientes.buscarNodo(buscadorPorDni);
+
+	return nodo->valor;
 }

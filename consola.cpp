@@ -5,6 +5,7 @@ void Consola::mostrarMenu()
 	cout << "1) Listar encomiendas\n";
 	cout << "2) Buscar encomienda por codigo\n";
 	cout << "3) Crear encomienda\n";
+	cout << "4) Listar clientes\n";
 	cout << "0) Salir\n";
 
 	int opcion;
@@ -27,6 +28,10 @@ void Consola::mostrarMenu()
 		crearEncomienda();
 		break;
 
+	case 4:
+		buscarCliente();
+		break;
+
 	default:
 		break;
 	}
@@ -34,7 +39,8 @@ void Consola::mostrarMenu()
 
 void Consola::listarEncomiendas()
 {
-	Burbuja<Encomienda> qs;
+	// TODO: Error Reading invalid data from 'A2':  the readable size is '(size_t)*2536' bytes, but '5072' bytes may be read.
+	MergeSort<Encomienda> qs;
 
 	auto compararPorMonto = [](Encomienda a, Encomienda b) -> int
 		{
@@ -44,7 +50,7 @@ void Consola::listarEncomiendas()
 			if (a.getPago() < b.getPago())
 				return -1;
 
-			return 0;			
+			return 0;
 		};
 
 	gestorEnvios.listarOrdenado(compararPorMonto, qs);
@@ -83,4 +89,15 @@ void Consola::crearEncomienda()
 	cin >> pago;
 
 	gestorEnvios.crearEncomienda(remitenteDni, destinatarioDni, sucursalDestino, servicio, stod(pago));
+}
+
+void Consola::buscarCliente()
+{
+	cout << "Ingrese el dni del cliente:";
+	string dni;
+	cin >> dni;
+
+	Cliente cliente = gestorClientes.buscarPorDni(dni);
+
+	cliente.imprimir();
 }
