@@ -1,2 +1,10 @@
-sucr01;sucursal1;calle sucursal;12;lima;lima;lima;ref sucural;01541254
-sucr06;sucursal2;calle sucursal 2;12;lima;lima;lima;ref sucural2;01541254
+lima;sucursal1;calle sucursal;12;lima;lima;lima;lima;01541254
+tacna;sucursal2;calle sucursal 2;12;lima;lima;lima;tacna;01541254
+miraflores;sucursal3;av. larco;100;miraflores;lima;lima;miraflores;01678901
+sanisidro;sucursal4;av. javier prado;250;sanisidro;lima;lima;sanisidro;01765432
+surco;sucursal5;av. caminos del inca;300;surco;lima;lima;surco;01812345
+pueblolibre;sucursal6;av. bolivar;50;pueblolibre;lima;lima;pueblolibre;01987654
+callao;sucursal7;av. saenz peña;75;callao;callao;callao;callao;01543210
+lamolina;sucursal8;av. la molina;200;lamolina;lima;lima;lamolina;01789012
+sanborja;sucursal9;av. san borja norte;150;sanborja;lima;lima;sanborja;01876543
+jesusmaria;sucursal10;av. arenales;80;jesusmaria;lima;lima;jesusmaria;01901234

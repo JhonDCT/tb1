@@ -87,6 +87,7 @@ public:
 		this->vehiculo = veh;
 		this->repartidor = repar;
 		this->ruta = rut;
+		// TODO: generar codigo unico
 		// this->paquetes = Lista<Paquete>();
 	}
 
@@ -98,20 +99,6 @@ public:
 	string getRemitente() { return remitente.getNombre(); }
 	string getFechaPago() { return pago.getFecha(); }
 
-	void imprimir();	
+	void imprimir();
 	string formatoParaGuardar();
 };
-
-//string codigo;
-//Cliente remitente;
-//Cliente destinatario;
-//Sucursal origen;
-//Sucursal destino;
-//Servicio servicio;
-//Lista<Paquete*> paquetes;
-//Seguimiento seguimiento;
-//Pago pago;
-//Comprobante comprobante;
-//Vehiculo vehiculo;
-//Repartidor repartidor;
-//Ruta ruta;

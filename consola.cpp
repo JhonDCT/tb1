@@ -2,7 +2,7 @@
 
 void Consola::mostrarMenu()
 {
-	limpiarPantalla();
+	//limpiarPantalla();
 	mostrarLogo();
 	cout << "========================================\n";
 	cout << "       MENU PRINCIPAL\n";
@@ -13,6 +13,7 @@ void Consola::mostrarMenu()
 	cout << "2) Buscar encomienda por codigo\n";
 	cout << "3) Crear encomienda\n";
 	cout << "4) Buscar clientes\n";
+	cout << "5) Mostrar cola de prioridad\n";
 	cout << "0) Salir\n";
 	cout << "\nSeleccione una opcion: ";
 

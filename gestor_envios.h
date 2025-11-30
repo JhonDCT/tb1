@@ -7,6 +7,7 @@
 #include "gestor_encomiendas.h"
 #include "gestor_clientes.h"
 #include "gestor_sucursales.h"
+#include "gestor_rutas.h"
 #include "lista_doble.h"
 #include "mergesort.h"
 #include "burbuja.h"
@@ -20,6 +21,7 @@ private:
 	GestorEncomiendas gestorEncomiendas;
 	GestorClientes gestorCliente;
 	GestorSucursales gestorSucursal;
+	GestorRutas gestorRutas;
 
 public:	
 	/*void listarOrdenado(function<int(Encomienda, Encomienda)> cmp, Ordenamiento<Encomienda>& est);*/

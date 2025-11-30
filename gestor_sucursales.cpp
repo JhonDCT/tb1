@@ -50,7 +50,6 @@ TablaHash<Sucursal> GestorSucursales::listar()
 	TablaHash<Sucursal> sucursalesTmp(sucursalesVector.size());
 	for (auto& sucursal : sucursalesVector)
 	{
-		cout << sucursal.getId() << endl;
 		sucursalesTmp.insertar(sucursal, sucursal.getId());
 	}
 
@@ -67,4 +66,9 @@ Sucursal GestorSucursales::buscarPorId(string id)
 		};
 
 	return sucursales.buscar(comparadorPorId, id);
+}
+
+vector<Sucursal> GestorSucursales::obtenerSucursales()
+{
+	return sucursales.obtenerTodos();
 }

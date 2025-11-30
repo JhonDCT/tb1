@@ -5,7 +5,7 @@ private:
 	int tiempo;
 	int distancia;
 
-public: 
+public:
 	Arista(int _destino, int t, int d) {
 		destino = _destino;
 		tiempo = t;
@@ -14,4 +14,6 @@ public:
 
 	int getDestino() { return destino; }
 	int getDistancia() { return distancia; }
+	int getTiempo() { return tiempo; }
+
 };

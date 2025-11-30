@@ -21,5 +21,5 @@ public:
 	int getEtiqueta() { return etiqueta; }
 	string getNombre() { return nombre; }
 
-	bool igual(int e) { return etiqueta = e; }
+	bool igual(int e) { return etiqueta == e; }
 };

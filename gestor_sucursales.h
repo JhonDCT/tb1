@@ -22,4 +22,5 @@ public:
 
 	TablaHash<Sucursal> listar();
 	Sucursal buscarPorId(string id);
+	vector<Sucursal> obtenerSucursales();
 };

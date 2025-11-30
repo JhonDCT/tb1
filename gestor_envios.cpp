@@ -61,8 +61,7 @@ void GestorEnvios::crearEncomienda(string remitenteDni, string destinatarioDni, 
 
 	/*Dijkstra dijkstra;
 	dijkstra.buscarRuta(stoi(origen.getId()));*/
-
-	// TODO: usar dijkstra para calcular la ruta entre origen y destino
+	gestorRutas.calcularRuta(origen, destino);
 
 	string encomiendaCodigo = gestorEncomiendas.crear(remitente, destinatario, origen, destino, servicio, pago, vehiculo, repartidor, ruta);
 

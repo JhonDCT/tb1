@@ -45,4 +45,17 @@ public:
 
 		throw std::runtime_error("No se encontro el elemento");
 	}
+
+	vector<T> obtenerTodos()
+	{
+		vector<T> todos;
+		for (const auto& lista : tabla)
+		{
+			for (const auto& item : lista)
+			{
+				todos.push_back(item);
+			}
+		}
+		return todos;
+	}
 };
