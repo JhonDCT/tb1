@@ -2,11 +2,19 @@
 
 void Consola::mostrarMenu()
 {
+	limpiarPantalla();
+	mostrarLogo();
+	cout << "========================================\n";
+	cout << "       MENU PRINCIPAL\n";
+	cout << "========================================\n";
+	cout << endl;
+
 	cout << "1) Listar encomiendas\n";
 	cout << "2) Buscar encomienda por codigo\n";
 	cout << "3) Crear encomienda\n";
-	cout << "4) Listar clientes\n";
+	cout << "4) Buscar clientes\n";
 	cout << "0) Salir\n";
+	cout << "\nSeleccione una opcion: ";
 
 	int opcion;
 	cin >> opcion;
@@ -14,50 +22,45 @@ void Consola::mostrarMenu()
 	switch (opcion)
 	{
 	case 0:
+		exit(0);
 		break;
 
 	case 1:
 		listarEncomiendas();
+		pausar();
 		break;
 
 	case 2:
 		buscarEncomiendaPorCodigo();
+		pausar();
 		break;
 
 	case 3:
 		crearEncomienda();
+		pausar();
 		break;
 
 	case 4:
 		buscarCliente();
+		pausar();
 		break;
 
 	default:
+		cout << "Opcion invalida.\n";
+		pausar();
 		break;
 	}
 }
 
 void Consola::listarEncomiendas()
 {
-	// TODO: Error Reading invalid data from 'A2':  the readable size is '(size_t)*2536' bytes, but '5072' bytes may be read.
-	MergeSort<Encomienda> qs;
-
-	auto compararPorMonto = [](Encomienda a, Encomienda b) -> int
-		{
-			if (a.getPago() > b.getPago())
-				return 1;
-
-			if (a.getPago() < b.getPago())
-				return -1;
-
-			return 0;
-		};
-
-	gestorEnvios.listarOrdenado(compararPorMonto, qs);
+	mostrarEncabezado("LISTADO DE ENCOMIENDAS");
+	gestorEnvios.listarOrdenado();
 }
 
 void Consola::buscarEncomiendaPorCodigo()
 {
+	mostrarEncabezado("BUSCAR ENCOMIENDA");
 	cout << "Ingrese el codigo de la encomienda: ";
 	string codigo;
 	cin >> codigo;
@@ -67,37 +70,75 @@ void Consola::buscarEncomiendaPorCodigo()
 
 void Consola::crearEncomienda()
 {
+	mostrarEncabezado("CREAR NUEVA ENCOMIENDA");
 	string remitenteDni;
 	string destinatarioDni;
+	string sucursalOrigen;
 	string sucursalDestino;
 	string servicio;
 	string pago;
 
-	cout << "Ingrese dni del remitente";
+	cout << "Ingrese DNI del remitente: ";
 	cin >> remitenteDni;
 
-	cout << "Ingrese dni del destinatario";
+	cout << "Ingrese DNI del destinatario: ";
 	cin >> destinatarioDni;
 
-	cout << "Ingrese el codigo de la sucursal destino";
+	cout << "Ingrese el codigo de la sucursal origen: ";
+	cin >> sucursalOrigen;
+
+	cout << "Ingrese el codigo de la sucursal destino: ";
 	cin >> sucursalDestino;
 
-	cout << "Ingrese el servicio";
+	cout << "Ingrese el servicio: ";
 	cin >> servicio;
 
-	cout << "Ingrese el monto del pago";
+	cout << "Ingrese el monto del pago: ";
 	cin >> pago;
 
-	gestorEnvios.crearEncomienda(remitenteDni, destinatarioDni, sucursalDestino, servicio, stod(pago));
+	gestorEnvios.crearEncomienda(remitenteDni, destinatarioDni, sucursalOrigen, sucursalDestino, servicio, stod(pago));
 }
 
 void Consola::buscarCliente()
 {
-	cout << "Ingrese el dni del cliente:";
+	mostrarEncabezado("BUSCAR CLIENTE");
+	cout << "Ingrese el DNI del cliente: ";
 	string dni;
 	cin >> dni;
 
 	Cliente cliente = gestorClientes.buscarPorDni(dni);
 
 	cliente.imprimir();
+}
+
+void Consola::limpiarPantalla()
+{
+	system("cls");
+}
+
+void Consola::pausar()
+{
+	cout << "\nPresione Enter para continuar...";
+	cin.ignore();
+	cin.get();
+}
+
+void Consola::mostrarEncabezado(string titulo)
+{
+	limpiarPantalla();
+	cout << "========================================\n";
+	cout << "       " << titulo << "\n";
+	cout << "========================================\n";
+	cout << endl;
+}
+
+void Consola::mostrarLogo()
+{
+    cout << "      __\n";
+    cout << " ____|  \\__\n";
+    cout << "|          |\n";
+    cout << "|__________|\n";
+    cout << "   O    O   \n";
+    cout << "OLVA CURRIER\n";
+    cout << endl;
 }

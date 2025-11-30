@@ -94,6 +94,8 @@ public:
 
 	double getPago() { return pago.getMonto(); };
 	string getCodigo() { return codigo; }
+	string getDestinatario() { return destinatario.getNombre(); }
+	string getRemitente() { return remitente.getNombre(); }
 	string getFechaPago() { return pago.getFecha(); }
 
 	void imprimir();	

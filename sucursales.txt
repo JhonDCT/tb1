@@ -1,0 +1,2 @@
+sucr01;sucursal1;calle sucursal;12;lima;lima;lima;ref sucural;01541254
+sucr06;sucursal2;calle sucursal 2;12;lima;lima;lima;ref sucural2;01541254

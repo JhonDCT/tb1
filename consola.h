@@ -18,17 +18,24 @@ private:
     GestorEnvios gestorEnvios;
     GestorEncomiendas gestorEncomiendas;
 	GestorClientes gestorClientes;
+	GestorSucursales gestorSucursales;
 
 public:
     void mostrarMenu();
 
-    void insertarCliente(string dni, string nombre, string telefono, string email);
     void buscarCliente();
-
     void crearEncomienda();
-	void eliminarEncomienda();
     void listarEncomiendas();
     void buscarEncomiendaPorCodigo();
-    
 
+    void registrarCliente();
+	void actualizarEstadoEncomienda();
+    void calcularTarifa();
+
+
+private:
+    void limpiarPantalla();
+    void pausar();
+    void mostrarEncabezado(string titulo);
+    void mostrarLogo();
 };

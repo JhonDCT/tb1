@@ -7,12 +7,19 @@
 #include <vector>
 #include "sucursal.h"
 #include "lista_doble.h"
+#include "tabla_hash.h"
 
 using namespace std;
 
 class GestorSucursales
 {
-public:
-	ListaDoble<Sucursal> listar();
+public:	
+	TablaHash<Sucursal> sucursales;
+
+	GestorSucursales() {
+		sucursales = listar();
+	}
+
+	TablaHash<Sucursal> listar();
 	Sucursal buscarPorId(string id);
 };

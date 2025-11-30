@@ -21,5 +21,4 @@ public:
 
 	ArbolBinario<Cliente> listar();
 	Cliente buscarPorDni(string dni);
-	void insertar(string dni, string nombre, string telefono, string email); // en el documento y en el arbol
 };

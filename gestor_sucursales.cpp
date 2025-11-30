@@ -1,8 +1,7 @@
 #include "gestor_sucursales.h"
 
-ListaDoble<Sucursal> GestorSucursales::listar()
+TablaHash<Sucursal> GestorSucursales::listar()
 {
-	ListaDoble<Sucursal> sucursales;
 	string ruta = "sucursales.txt";
 
 	ifstream fichero;
@@ -12,6 +11,8 @@ ListaDoble<Sucursal> GestorSucursales::listar()
 	{
 		cout << "No se puede abrir el archivo" << ruta << endl;
 	}
+
+	vector<Sucursal> sucursalesVector;
 
 	string linea;
 	while (getline(fichero, linea))
@@ -41,23 +42,29 @@ ListaDoble<Sucursal> GestorSucursales::listar()
 		sucursal.setTelefono(campos[8]);
 		sucursal.setDireccion(direccionOrigen);
 
-		sucursales.insertarInicio(sucursal);
+		sucursalesVector.push_back(sucursal);
 	}
 
 	fichero.close();
 
-	return sucursales;
+	TablaHash<Sucursal> sucursalesTmp(sucursalesVector.size());
+	for (auto& sucursal : sucursalesVector)
+	{
+		cout << sucursal.getId() << endl;
+		sucursalesTmp.insertar(sucursal, sucursal.getId());
+	}
+
+	return sucursalesTmp;
 }
 
 Sucursal GestorSucursales::buscarPorId(string id)
 {
-	ListaDoble<Sucursal> sucursales = listar();
-
 	auto comparadorPorId = [id](Sucursal s) {
+		cout << s.getId() << endl;
 		if (s.getId() == id) return true;
 
 		return false;
 		};
 
-	return sucursales.buscar(comparadorPorId);
+	return sucursales.buscar(comparadorPorId, id);
 }

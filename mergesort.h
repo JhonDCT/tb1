@@ -1,3 +1,5 @@
+#pragma once
+
 #include "ordenamiento.h"
 
 template <typename T>

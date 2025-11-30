@@ -2,7 +2,6 @@
 
 ListaDoble<Encomienda> GestorEncomiendas::listar()
 {
-	/*ListaDoble<Encomienda> encomiendas;*/
 	string ruta = "encomiendas.txt";
 
 	ifstream fichero;
@@ -130,10 +129,7 @@ ListaDoble<Encomienda> GestorEncomiendas::listar()
 }
 
 Encomienda GestorEncomiendas::buscarPorCodigo(string codigo) {
-	//ListaDoble<Encomienda> encomiendas = listar();
-
 	auto comparadorPorCodigo = [codigo](Encomienda a) {
-
 		if (a.getCodigo() == codigo) return true;
 
 		return false;
@@ -147,8 +143,8 @@ string GestorEncomiendas::crear(
 	Cliente destinatario,
 	Sucursal origen,
 	Sucursal destino,
-	Servicio servicio,	
-	Pago pago,	
+	Servicio servicio,
+	Pago pago,
 	Vehiculo vehiculo,
 	Repartidor repartidor,
 	Ruta ruta
@@ -165,7 +161,7 @@ string GestorEncomiendas::crear(
 	comprobante.setSerie("F001");
 	comprobante.setTipo("factura");
 	comprobante.setTotal(pago.getMonto());
-	
+
 	Encomienda encomienda = Encomienda(
 		remitente,
 		destinatario,
@@ -180,7 +176,7 @@ string GestorEncomiendas::crear(
 		ruta
 	);
 
-	ofstream fichero;
+	/*ofstream fichero;
 	fichero.open(this->ruta);
 
 	if (!fichero.is_open())
@@ -190,7 +186,7 @@ string GestorEncomiendas::crear(
 
 	fichero << encomienda.formatoParaGuardar() << endl;
 
-	fichero.close();
+	fichero.close();*/
 
 	return encomienda.getCodigo();
 }

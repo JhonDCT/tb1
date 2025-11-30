@@ -9,9 +9,11 @@ bool Cliente::validar()
 
 void Cliente::imprimir()
 {
-    cout << "ID: " << id << endl;
-    cout << "DNI: " << dni << endl;
-    cout << "Nombre: " << nombre << endl;
-    cout << "Telefono: " << telefono << endl;
-    cout << "Email: " << email << endl;
+    cout << "---------------------------------\n";
+    cout << " ID:       " << id << endl;
+    cout << " DNI:      " << dni << endl;
+    cout << " Nombre:   " << nombre << endl;
+    cout << " Telefono: " << telefono << endl;
+    cout << " Email:    " << email << endl;
+    cout << "---------------------------------\n";
 }
